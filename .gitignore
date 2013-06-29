@@ -13,3 +13,4 @@
 *.a
 
 build/
+.DS_Store
