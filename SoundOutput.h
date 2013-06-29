@@ -19,14 +19,14 @@ struct Stream
 		duration(duration),
        		samples(duration * sample_rate) {};
 
-	void generate_sine(int frequency) {
+	void generate_sine(float frequency) {
 		// create a sine wave. basically a tone. :)
 		for(size_t i = 0; i < samples.size(); ++i) { 
 			samples[i] = volume * sin((2.f * M_PI * float(frequency)) / sample_rate * i); 
 		}
 	}
 	
-	void modulate_sine(int frequency) {
+	void modulate_sine(float frequency) {
 		// multiplicate the existing sound with a sinus wave.
 		for(size_t i = 0; i <  samples.size(); ++i) {
 			samples[i] *=  sin((2.f * M_PI * float(frequency)) / sample_rate * i);
