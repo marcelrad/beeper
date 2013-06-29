@@ -35,7 +35,7 @@ struct Stream
     template<typename functor>
     void modulate(functor &f) {
         for (size_t i = 0; i < samples.size(); ++i) {
-            samples[i] *= f(sample_rate, i);
+            samples[i] = f(samples[i], sample_rate, i);
         }
     }
 	size_t size() const {
